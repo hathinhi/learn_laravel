@@ -13,5 +13,6 @@
 <div class="container">
     @yield('content')
 </div>
+@stack('js')
 </body>
 </html>
