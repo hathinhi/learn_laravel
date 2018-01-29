@@ -15,3 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/user', 'UserController@index');
+Route::get('user/detail/{id}', 'UserController@detail');
+Route::get('user/add', 'UserController@addUser');
+Route::post('user/add_save', 'UserController@addSave');
+Route::get('login', array('uses' => 'HomeController@showLogin'));
+Route::post('login', array('uses' => 'HomeController@doLogin'));
+Route::get('register', 'RegisterController@showRegister');
+Route::post('register/save', 'RegisterController@doRegister');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function __construct()
@@ -20,4 +20,15 @@ class UserController extends Controller
         $users = User::getAll();
         return view('user.index')->with('users', $users);
     }
+    public function detail($id){
+        return view('user.detail')->with('id', $id);
+    }
+    public function addUser(){
+        return view('user.add');
+    }
+    public function addSave(Request $request){
+        $name = $request->input('name');
+        echo $name;
+    }
+
 }

@@ -1,25 +1,9 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-</head>
-<body>
-    @foreach ($users as $user)
-        <li>{{ $user->name }}</li>
-    @endforeach
-    @foreach ($users as $user)
-        @if ($loop->first)
-            This is the first iteration.
-        @endif
-        @if ($loop->last)
-            This is the last iteration.
-        @endif
+@extends('layouts.master')
 
-        <p>This is user {{ $user->id }}</p>
+@section('title', 'Home')
+
+@section('content')
+    @foreach ($users as $user)
+    <li><a href={{url("/user/detail/{$user->id}")}}>{{ $user->name }}</a></li>
     @endforeach
-</body>
-</html>
+@stop

@@ -1,0 +1,1 @@
+<div>Chi tiết user{{$id}}</div>
